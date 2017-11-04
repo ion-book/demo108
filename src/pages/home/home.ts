@@ -9,18 +9,16 @@ import { IonicPage, NavController } from 'ionic-angular';
   templateUrl: 'home.html',
   animations: [
     trigger('itemState', [
-      state('in', style({opacity: 1, transform: 'translateX(0)'})),
+      state('in', style({transform: 'translateX(0)'})),
       //Enter
       transition('void => *', [
         style({
-          opacity: 0,
           transform: 'translateX(-100%)'
         }),
-        animate('300ms ease-in')
+        animate('300ms linear')
       ]),
       //Leave
       transition('* => void', animate('300ms ease-out', style({
-        opacity: 0,
         transform: 'translateX(100%)'
       }))),
     ])
